@@ -1,4 +1,5 @@
 package PlaySongDemo;
+//Aadityaa Thaker
 
 /**
  * This code will play any song assuming that file is in folder songfiles. 
@@ -28,11 +29,13 @@ public class PlayAnMP3 extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     BorderPane pane = new BorderPane();
-    String path = "songfiles/Capture.mp3";
+    //changed the song name to this really long one
+    String path = "songfiles/DanseMacabreViolinHook.mp3";
     pane.setCenter( new Label(path));
     playASong(path);
     // Put the pane in a sized Scene and show the GUI
-    Scene scene = new Scene(pane, 255, 85); // 255 pixels wide, 85 pixels tall
+    Scene scene = new Scene(pane, 260, 90); 
+    // Changed the size from 255 pixels wide to 260, changed from 85 pixels tall to 90
     stage.setScene(scene);
     // Don't forget to show the running app:
     stage.show();
@@ -49,7 +52,7 @@ public class PlayAnMP3 extends Application {
     Media media = new Media(uri.toString());
     MediaPlayer mediaPlayer = new MediaPlayer(media);
     mediaPlayer.play();
-      
+    //this is a new comment
     mediaPlayer.setOnEndOfMedia(new Waiter());
     System.out.println("You may need to shut this App down");
  
@@ -59,7 +62,8 @@ public class PlayAnMP3 extends Application {
     @Override
     public void run() {
       songsPlayed++;
-      System.out.println("Song ended, play song #" + songsPlayed);
+      // Changed the print statement
+      System.out.println("This song has ended, play song #" + songsPlayed);
       Platform.exit();
     }
   }
